@@ -17,11 +17,9 @@ public class AnCom extends JComponent implements ActionListener{
         
 
         this.setPreferredSize(new Dimension(1000,1000));
-       t = new Timer(100, this);
-       t.start();
-
         
-
+        t = new Timer(100, this);
+       t.start();
     }
     public void paint(Graphics g){
 
@@ -42,11 +40,15 @@ public class AnCom extends JComponent implements ActionListener{
 
                     Cir c1 = (Cir) poly;
 
-                    g.setColor(new Color(c1.getBC(0),c1.getBC(1),c1.getBC(2)));               
-                    g.fillOval(c1.getX(), c1.getY(), c1.getRadius()+c1.getBorderThickness(), c1.getRadius()+c1.getBorderThickness());
+                   // int bx =(int) c1.getX() + ( c1.getRadius()/2);
+                  // int by=(int) c1.getY() + ( c1.getRadius()/2); 
+
+
+                   // g.setColor(new Color(c1.getBC(0),c1.getBC(1),c1.getBC(2)));               
+                  //  g.fillOval(bx, by, c1.getRadius()+c1.getBorderThickness(), c1.getRadius()+c1.getBorderThickness());
 
                 
-                
+             
                     g.setColor(new Color(c1.getColour(0),c1.getColour(1),c1.getColour(2)));
                     g.fillOval(c1.getX(), c1.getY(), c1.getRadius(), c1.getRadius());
 
@@ -55,13 +57,15 @@ public class AnCom extends JComponent implements ActionListener{
                 else if(poly instanceof Rect){
                     Rect r1 = (Rect)poly;
 
+
+                    g.setColor(new Color(r1.getBC(0),r1.getBC(1),r1.getBC(2)));
+                    g.fillRect(r1.getX() -r1.getBorderThickness(), r1.getY() -r1.getBorderThickness(), r1.getWidth() + (2* r1.getBorderThickness()), r1.getLength() + (2* r1.getBorderThickness()));
+
                     g.setColor(new Color(r1.getColour(0),r1.getColour(1),r1.getColour(2)));
                     g.fillRect(r1.getX(), r1.getY(), r1.getWidth(), r1.getWidth());
-
-
-
                 }
             }
+            
             catch(Exception e){
 
             }
@@ -76,9 +80,6 @@ public class AnCom extends JComponent implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         frame++;
         shapes.update();
-
-        
-        
         repaint();
        
     }

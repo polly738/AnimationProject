@@ -38,7 +38,7 @@ public class Rect implements Poly{
         return width;
     }
 
-    public int length(){
+    public int getLength(){
         
         return length;
     }

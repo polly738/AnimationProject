@@ -9,7 +9,8 @@ public class Shapes {
 
        shapes = new ArrayList<Poly>();
 
-       Cir c1 = new Cir(50, 0, 0, 255, 0, 255, 0, 0, 0, 0);
+       Cir c1 = new Cir(50, 100, 100, 255, 0, 255, 50, 255, 100, 0);
+
 
        c1.addAction('s', 10);
        c1.addAction('j', 20, 3, 100);
@@ -29,8 +30,11 @@ public class Shapes {
        shapes.add(c2);
        shapes.add(c1);
 
-       Rect r1 = new Rect(100, 100, 500, 500, 125, 123, 100, 10, 255, 0, 0);
+       Rect r1 = new Rect(100, 100, 500, 500, 255, 0, 0, 10, 255, 0, 0);
+
+       r1.addAction('s', 60);
        shapes.add(r1);
+
     }
 
     public void addAction(char c, int a){
