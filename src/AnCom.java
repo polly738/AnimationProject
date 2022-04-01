@@ -4,12 +4,7 @@ import javax.swing.JComponent;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
 import javax.swing.Timer;
-
-
-
 
 public class AnCom extends JComponent implements ActionListener{
     private Timer t;
@@ -41,41 +36,37 @@ public class AnCom extends JComponent implements ActionListener{
         Poly poly =shapes.getNext();
         if(poly.isShown()){
 
-            if(poly instanceof Cir){
+            try{
 
-                Cir c1 = (Cir) poly;
+                if(poly instanceof Cir){
 
-                g.setColor(new Color(c1.getBC(0),c1.getBC(1),c1.getBC(2)));               
-                g.fillOval(c1.getX(), c1.getY(), c1.getRadius()+c1.getBorderThickness(), c1.getRadius()+c1.getBorderThickness());
+                    Cir c1 = (Cir) poly;
+
+                    g.setColor(new Color(c1.getBC(0),c1.getBC(1),c1.getBC(2)));               
+                    g.fillOval(c1.getX(), c1.getY(), c1.getRadius()+c1.getBorderThickness(), c1.getRadius()+c1.getBorderThickness());
 
                 
                 
-                g.setColor(new Color(c1.getColour(0),c1.getColour(1),c1.getColour(2)));
-                g.fillOval(c1.getX(), c1.getY(), c1.getRadius(), c1.getRadius());
+                    g.setColor(new Color(c1.getColour(0),c1.getColour(1),c1.getColour(2)));
+                    g.fillOval(c1.getX(), c1.getY(), c1.getRadius(), c1.getRadius());
+
+                }
+
+                else if(poly instanceof Rect){
+                    Rect r1 = (Rect)poly;
+
+                    g.setColor(new Color(r1.getColour(0),r1.getColour(1),r1.getColour(2)));
+                    g.fillRect(r1.getX(), r1.getY(), r1.getWidth(), r1.getWidth());
+
+
+
+                }
+            }
+            catch(Exception e){
 
             }
-
-            else if(poly instanceof Rect){
-                Rect r1 = (Rect)poly;
-
-                
-
-
-
-            }
-
-       
-    
         }
-
        }
-
-          
-
-       
-
-    
-    
     }
 
 
