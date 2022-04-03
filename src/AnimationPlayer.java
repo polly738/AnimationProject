@@ -1,8 +1,11 @@
 import javax.swing.JFrame;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class AnimationPlayer extends JFrame{
+public class AnimationPlayer extends JFrame  {
 
     AnCom com;
+
 
     public AnimationPlayer(){
         
@@ -17,4 +20,10 @@ public class AnimationPlayer extends JFrame{
         this.setVisible(true);
 
     }
+    public void close(){
+
+        this.close();
+    }
+
+   
 }
