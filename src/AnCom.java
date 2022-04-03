@@ -39,13 +39,9 @@ public class AnCom extends JComponent implements ActionListener{
                 if(poly instanceof Cir){
 
                     Cir c1 = (Cir) poly;
+                    g.setColor(new Color(c1.getBC(0),c1.getBC(1),c1.getBC(2)));
+                    g.fillRect(c1.getX() -c1.getBorderThickness(), c1.getY() -c1.getBorderThickness(), c1.getRadius() + (2* c1.getBorderThickness()), c1.getRadius() + (2* c1.getBorderThickness()));
 
-                   // int bx =(int) c1.getX() + ( c1.getRadius()/2);
-                  // int by=(int) c1.getY() + ( c1.getRadius()/2); 
-
-
-                   // g.setColor(new Color(c1.getBC(0),c1.getBC(1),c1.getBC(2)));               
-                  //  g.fillOval(bx, by, c1.getRadius()+c1.getBorderThickness(), c1.getRadius()+c1.getBorderThickness());
 
                 
              

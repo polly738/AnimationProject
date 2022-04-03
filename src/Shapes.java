@@ -30,7 +30,7 @@ public class Shapes {
        shapes.add(c2);
        shapes.add(c1);
 
-       Rect r1 = new Rect(100, 100, 500, 500, 255, 0, 0, 10, 255, 0, 0);
+       Rect r1 = new Rect(100, 100, 500, 500, 255, 0, 0,60 , 255, 255, 255);
 
        r1.addAction('s', 60);
        shapes.add(r1);
