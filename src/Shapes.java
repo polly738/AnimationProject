@@ -35,6 +35,11 @@ public class Shapes {
        r1.addAction('s', 60);
        shapes.add(r1);
 
+       Line l = new Line(60, 60, 100, 120, 50);
+
+       l.addAction('s', 10);
+
+       shapes.add(l);
     }
 
     public void addAction(char c, int a){

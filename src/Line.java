@@ -6,18 +6,44 @@ public class Line implements Poly{
     private int[] colour = new int[3];
     private int x;
     private int y;
+    private int x2;
+    private int y2;
     private int frame =0;
     private boolean shown;
+    private int slope;
+
+    private int length;
 
     private ActionHandler actions = new ActionHandler();
-    public Line(){
+    public Line(int xi, int yi,int xi2,int yi2, int bt){
+
+        x= xi;
+        y = yi;
+        y2 = yi2;
+        x2= xi2;
+        borderThickness = bt;
+
+       
+        shown = false;
+
+        length =(int) Math.sqrt(Math.pow(x2-x, 2)+ Math.pow(y2-y, 2));
 
     }
+
+    public int getX2(){
+
+        return x2;
+    }
+
+    public int getY2(){
+        return y2;
+    }
+
 
     @Override
     public int getBC(int a){
 
-        return bColour[a];
+        return -1;
     }
 
     @Override
@@ -37,7 +63,7 @@ public class Line implements Poly{
 
         return borderThickness;
     }
-  
+
     @Override
     public boolean isShown(){
 
@@ -47,7 +73,7 @@ public class Line implements Poly{
     @Override
     public int getColour(int a){
 
-        return colour[a];
+        return -1;
     }
    
     @Override
@@ -102,7 +128,5 @@ public class Line implements Poly{
         actions.addAction(c, a, x, y);
     
     }
-
-
-    
+ 
 }

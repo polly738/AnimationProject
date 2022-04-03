@@ -5,6 +5,9 @@ import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.Timer;
+import java.awt.*;
+import java.awt.geom.Line2D;
+import javax.swing.*;
 
 public class AnCom extends JComponent implements ActionListener{
     private Timer t;
@@ -16,16 +19,18 @@ public class AnCom extends JComponent implements ActionListener{
         super();
         
 
-        this.setPreferredSize(new Dimension(1000,1000));
+        this.setPreferredSize(new Dimension(1000,1000));//sets pixel size 
         
         t = new Timer(100, this);
        t.start();
     }
-    public void paint(Graphics g){
+    public  void paint(Graphics g){
+
+        Graphics2D g2 = (Graphics2D) g;
+
 
         String insert = "Frame: " + Integer.toString(frame);
         g.drawString(insert, 5, 15);
-
 
        
 
@@ -40,10 +45,9 @@ public class AnCom extends JComponent implements ActionListener{
 
                     Cir c1 = (Cir) poly;
                     g.setColor(new Color(c1.getBC(0),c1.getBC(1),c1.getBC(2)));
-                    g.fillRect(c1.getX() -c1.getBorderThickness(), c1.getY() -c1.getBorderThickness(), c1.getRadius() + (2* c1.getBorderThickness()), c1.getRadius() + (2* c1.getBorderThickness()));
+                    g.fillOval(c1.getX() -c1.getBorderThickness(), c1.getY() -c1.getBorderThickness(), c1.getRadius() + (2* c1.getBorderThickness()), c1.getRadius() + (2* c1.getBorderThickness()));
 
 
-                
              
                     g.setColor(new Color(c1.getColour(0),c1.getColour(1),c1.getColour(2)));
                     g.fillOval(c1.getX(), c1.getY(), c1.getRadius(), c1.getRadius());
@@ -59,6 +63,17 @@ public class AnCom extends JComponent implements ActionListener{
 
                     g.setColor(new Color(r1.getColour(0),r1.getColour(1),r1.getColour(2)));
                     g.fillRect(r1.getX(), r1.getY(), r1.getWidth(), r1.getWidth());
+                }
+
+                else if(poly instanceof Line){
+                    Line l1 = (Line) poly;
+
+                    g.setColor(new Color(0,0,0));
+
+                    g2.setStroke(new BasicStroke(l1.getBorderThickness()));
+                    g2.draw(new Line2D.Float(l1.getX(), l1.getY(), l1.getX2(), l1.getY2()));                    
+
+
                 }
             }
             
