@@ -19,6 +19,14 @@ public class Line implements Poly{
     private boolean shown;
    
     private ActionHandler actions = new ActionHandler();
+
+    /**
+     * Constructor of method
+     * @param xi x value param (int)
+     * @param yi y value param (int)
+     * @param xi2 x2  param value (int)
+     * @param yi2 y2  param value (int)
+     */
     public Line(int xi, int yi,int xi2,int yi2, int bt){
 
         x= xi;
@@ -30,11 +38,19 @@ public class Line implements Poly{
         shown = false;
     }
 
+    /**
+     * returns x2 value of line object
+     * @return x2 value (int)
+     */
     public int getX2(){
 
         return x2;
     }
 
+   /**
+     * returns y2 value of line object
+     * @return y2 value (int)
+     */ 
     public int getY2(){
         return y2;
     }
@@ -79,6 +95,7 @@ public class Line implements Poly{
 
         return borderThickness;
     }
+
     /**
     * Implemented for Poly interface return if the poly is suposed to be shown
     *@return boolean value true if the object is shown false if not
@@ -149,12 +166,26 @@ public class Line implements Poly{
         actions.addAction(c, a);
     }
 
+    /**
+   * Method implemented for poly interface Adds actions to actions (arraylist of actions) for change colour effect 
+   * @param c (char) type of effect being added
+   * @param a (int) when the effect will be activated
+   * @param c1 (int) R value of colour
+   * @param c2 (int) G value of colour
+   * @param c3 (int) B value of colour    
+   */
     @Override
     public void addAction(char c, int a, int c1, int c2, int c3){
 
         actions.addAction(c, a, c1, c2, c3);
     }
 
+ /**
+   * Adds action to action (arraylist of actions) for jump effect 
+   * @param c (char) type of effect being added
+   * @param a (int) when the effect will be activated
+   * @param x (int) jumpX value of jump effect
+   * @param y (int) jumpY value of jump effect    */
     @Override
     public void addAction(char c, int a, int x, int y){
 

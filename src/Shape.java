@@ -53,7 +53,7 @@ public class Shape {
         return colour[a];
     }
 
-    public void next(){
+    public void update(){
 
     frame++;
 
@@ -110,4 +110,3 @@ public class Shape {
         actions.addAction(c, a, x, y);;
     }
 }
-

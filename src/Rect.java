@@ -17,9 +17,22 @@ public class Rect implements Poly{
     private boolean shown;
     private int width;
     private int length;
-
     private ActionHandler actions = new ActionHandler();
 
+    /**
+     * Constructor of method
+     * @param llenght lenght value param (int)
+     * @param wwidth width value param (int)
+     * @param xi x value param (int)
+     * @param yi y value param (int)
+     * @param c1 R colour param value (int)
+     * @param c2 G colour param value (int)
+     * @param c3 B colour param value (int)
+     * @param bt borderthickness parm value (int)
+     * @param b1 R colour value param of border colour (int)
+     * @param b2 G colour value param of border colour (int)
+     * @param b3 B colour value param of border colour (int)
+     */
     public Rect(int llength, int wwidth,int xi, int yi,int c1, int c2, int c3, int bt, int b1, int b2, int b3){
        
         width = wwidth;
@@ -40,17 +53,25 @@ public class Rect implements Poly{
 
     }
 
+   /**
+     * Method returns width value of object
+     * @return width (int)
+     */
     public int getWidth(){
 
         return width;
     }
 
+   /**
+     * Method returns width value of object
+     * @return width (int)
+     */ 
     public int getLength(){
         
         return length;
     }
 
- /**
+    /**
     * Implemented for Poly interface, gets Border Colour value
     * @param a (int) what border colour value is returnerd (0,1,2) -> (R,G,B)
     * @return border colour value (int) at value speficied 
@@ -61,7 +82,7 @@ public class Rect implements Poly{
         return bColour[a];
     }
 
- /**
+    /**
     * Implemented for Poly interface, returns x value of calss
     *@return x value of class (int)
     */
@@ -70,7 +91,7 @@ public class Rect implements Poly{
         
         return x;        
     }
-  /**
+    /**
     * Implemented for Poly interface, returns y value of calss
     *@return y value of class (int)
     */ 
@@ -79,25 +100,42 @@ public class Rect implements Poly{
 
         return y;
     }
-   
+
+  /**
+    * Implemented for Poly interface returns border thickness of class
+    *@return border thickness of class (int)
+    */ 
     @Override
     public int getBorderThickness(){
 
         return borderThickness;
     }
-  
+
+  /**
+    * Implemented for Poly interface return if the poly is suposed to be shown
+    *@return boolean value true if the object is shown false if not
+    */ 
     @Override
     public boolean isShown(){
 
         return shown;
     }
-   
+
+   /**
+    * Implemented for Poly interface, gets Colour value
+    * @param a (int) what colour value is returnerd (0,1,2) -> (R,G,B)
+    * @return colour value (int) at value speficied 
+    */
     @Override
     public int getColour(int a){
 
         return colour[a];
     }
    
+   /**
+    * Implemented for Poly interface
+    *Updates the cir on all its attributes if effect is to change them on the frame
+    */ 
     @Override
     public void update(){
 
@@ -132,18 +170,36 @@ public class Rect implements Poly{
         }    
     }
 
+  /**
+   * Method implement for Poly interface Adds actions to actions (arraylist of actions) for hide/show effect 
+   * @param c (char) type of effect being added
+   * @param a (int) when the effect will be activated
+   */
     @Override
     public void addAction(char c, int a){
 
         actions.addAction(c, a);
     }
-
+    /**
+   * Method implemented for poly interface Adds actions to actions (arraylist of actions) for change colour effect 
+   * @param c (char) type of effect being added
+   * @param a (int) when the effect will be activated
+   * @param c1 (int) R value of colour
+   * @param c2 (int) G value of colour
+   * @param c3 (int) B value of colour    
+   */
     @Override
     public void addAction(char c, int a, int c1, int c2, int c3){
 
         actions.addAction(c, a, c1, c2, c3);
     }
-
+  
+    /**
+   * Adds action to action (arraylist of actions) for jump effect 
+   * @param c (char) type of effect being added
+   * @param a (int) when the effect will be activated
+   * @param x (int) jumpX value of jump effect
+   * @param y (int) jumpY value of jump effect    */
     @Override
     public void addAction(char c, int a, int x, int y){
 

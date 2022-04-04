@@ -19,6 +19,19 @@ public class Cir implements Poly {
 
     private ActionHandler actions = new ActionHandler();
 
+ /**
+     * Constructor of method
+     * @param r radius value param (int)
+     * @param xi x value param (int)
+     * @param yi y value param (int)
+     * @param c1 R colour param value (int)
+     * @param c2 G colour param value (int)
+     * @param c3 B colour param value (int)
+     * @param bt borderthickness parm value (int)
+     * @param b1 R colour value param of border colour (int)
+     * @param b2 G colour value param of border colour (int)
+     * @param b3 B colour value param of border colour (int)
+     */
     public Cir(int r,int xi, int yi,int c1, int c2, int c3, int bt, int b1, int b2, int b3){
 
 
@@ -68,6 +81,7 @@ public class Cir implements Poly {
         
         return x;        
     }
+
   /**
     * Implemented for Poly interface returns y value of class
     *@return y value of class (int)
@@ -77,6 +91,7 @@ public class Cir implements Poly {
 
         return y;
     }
+
   /**
     * Implemented for Poly interface returns border thickness of class
     *@return border thickness of class (int)
@@ -86,6 +101,7 @@ public class Cir implements Poly {
 
         return borderThickness;
     }
+    
  /**
     * Implemented for Poly interface return if the poly is suposed to be shown
     *@return boolean value true if the object is shown false if not
@@ -95,6 +111,7 @@ public class Cir implements Poly {
 
         return shown;
     }
+
   /**
     * Implemented for Poly interface, gets Colour value
     * @param a (int) what colour value is returnerd (0,1,2) -> (R,G,B)
@@ -167,7 +184,7 @@ public class Cir implements Poly {
 
         actions.addAction(c, a, c1, c2, c3);
     }
-/**
+ /**
    * Adds action to action (arraylist of actions) for jump effect 
    * @param c (char) type of effect being added
    * @param a (int) when the effect will be activated
