@@ -9,8 +9,7 @@ public class Line implements Poly{
 
 
     private int borderThickness;
-    private int[] bColour= new int[3];
-    private int[] colour = new int[3];
+
     private int x;
     private int y;
     private int x2;
@@ -146,9 +145,7 @@ public class Line implements Poly{
                 break;
 
                 case 'c'://change colour
-                colour[0] = actions.getColour(0);
-                colour[1] = actions.getColour(1);
-                colour[2] = actions.getColour(2);
+               
 
                 break;
             }

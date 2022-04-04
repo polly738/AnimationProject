@@ -6,9 +6,7 @@
 * @since   2021-04-02 
 */
 public class AnimationMain{
-    /**
-    * Main method of project
-    */
+    
     public static void main(String[] args){
 
         AnimationPlayer player = new AnimationPlayer();

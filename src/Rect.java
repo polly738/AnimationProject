@@ -57,8 +57,8 @@ public class Rect implements Poly{
      * Method returns width value of object
      * @return width (int)
      */
+    
     public int getWidth(){
-
         return width;
     }
 
