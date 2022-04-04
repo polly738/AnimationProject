@@ -1,3 +1,9 @@
+/**
+*Class that is an arraylist of Poly interface, use to handle large amount of Poly interfaces at once
+* @author  Jeffrey Betty
+* @version 1.0
+* @since   2021-04-02 
+*/
 import java.util.ArrayList;
 
 public class Shapes {

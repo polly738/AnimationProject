@@ -1,3 +1,11 @@
+/**
+* interface that when implemented allows for AnCom to animate instance of interface,
+*
+* @author  Jeffrey Betty
+* @version 1.0
+* @since   2021-04-02 
+*/
+
 public interface Poly {
 
     public int getBC(int a);

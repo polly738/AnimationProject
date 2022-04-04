@@ -1,5 +1,5 @@
 /**
-* Class implements Poly interface to make a circle shape that AnCom can animate
+* Class implements Poly interface to make a Line that AnCom can animate
 *
 * @author  Jeffrey Betty
 * @version 1.0

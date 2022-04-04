@@ -1,5 +1,5 @@
 /**
-* JFrame of project
+* JFrame of project 
 *
 * @author  Jeffrey Betty
 * @version 1.0

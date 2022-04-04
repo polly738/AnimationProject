@@ -91,9 +91,6 @@ public class AnCom extends JComponent implements ActionListener{
        }
     }
 
-
-
-
     @Override
     public void actionPerformed(ActionEvent e) {
         frame++;
