@@ -1,3 +1,10 @@
+/**
+* Class implements Poly interface to make a circle shape that AnCom can animate
+*
+* @author  Jeffrey Betty
+* @version 1.0
+* @since   2021-04-02 
+*/
 public class Line implements Poly{
 
 

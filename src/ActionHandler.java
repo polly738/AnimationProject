@@ -1,10 +1,17 @@
+/**
+* This class handles arraylist of actions (effects) give to a poly
+*
+* @author  Jeffrey Betty
+* @version 1.0
+* @since   2021-04-02 
+*/
 import java.util.ArrayList;
 
 public class ActionHandler {
 
     private ArrayList<Action> actions = new ArrayList<Action>();
 
-    Action nextAction;
+    private Action nextAction;
     
     public ActionHandler(){
 

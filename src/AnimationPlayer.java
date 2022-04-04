@@ -1,10 +1,17 @@
+/**
+* JFrame of project
+*
+* @author  Jeffrey Betty
+* @version 1.0
+* @since   2021-04-02 
+*/
+
 import javax.swing.JFrame;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 public class AnimationPlayer extends JFrame  {
 
-    AnCom com;
+   private AnCom com;
 
 
     public AnimationPlayer(){

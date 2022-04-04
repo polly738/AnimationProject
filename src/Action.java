@@ -1,3 +1,10 @@
+/**
+* Class keeps track of singular effect (action) given to a poly (rect,line,cir)
+*
+* @author  Jeffrey Betty
+* @version 1.0
+* @since   2021-04-02 
+*/
 public class Action {
     private int startFrame;
     private char type;

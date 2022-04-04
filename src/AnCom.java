@@ -1,3 +1,11 @@
+/**
+* Class does the actually animation for project. Uses javax and overwrite paint method in jcomponenet 
+to animate shapes
+*
+* @author  Jeffrey Betty
+* @version 1.0
+* @since   2021-04-02 
+*/
 import java.awt.Color;
 import java.awt.Dimension;
 import javax.swing.JComponent;
@@ -7,7 +15,6 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 import java.awt.*;
 import java.awt.geom.Line2D;
-import javax.swing.*;
 
 public class AnCom extends JComponent implements ActionListener{
     private Timer t;
