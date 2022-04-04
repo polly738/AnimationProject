@@ -13,7 +13,9 @@ public class AnimationPlayer extends JFrame  {
 
    private AnCom com;
 
-
+    /**
+    * constructor of Animation, also handles the making of a jframe 
+    */
     public AnimationPlayer(){
         
         super("Animation");
@@ -27,6 +29,10 @@ public class AnimationPlayer extends JFrame  {
         this.setVisible(true);
 
     }
+
+    /**
+    * Method close JFrame
+    */
     public void close(){
 
         this.close();

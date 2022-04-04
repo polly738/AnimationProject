@@ -18,19 +18,24 @@ import java.awt.geom.Line2D;
 
 public class AnCom extends JComponent implements ActionListener{
     private Timer t;
-    Shapes shapes = new Shapes();
+    private Shapes shapes = new Shapes();
 
     private int frame =0;
-   
-    public AnCom(){
-        super();
-        
 
-        this.setPreferredSize(new Dimension(1000,1000));//sets pixel size 
+   /**
+    * Constructor of class
+    */
+    public AnCom(){
         
-        t = new Timer(100, this);
-       t.start();
+        super();
+        this.setPreferredSize(new Dimension(1000,1000));//sets pixel size 
+        t = new Timer(100, this);//makes timer for animation loop
+        t.start();
     }
+   /**
+    * Animates the JComponent
+    * @param Grapics g Allow the code to animate the JComponent
+    */
     public  void paint(Graphics g){
 
         Graphics2D g2 = (Graphics2D) g;
@@ -91,6 +96,11 @@ public class AnCom extends JComponent implements ActionListener{
        }
     }
 
+
+   /**
+    * repaint the frame, updates the polys and adds to the frame
+    * @param ActionEvent e Action event that triggers this method
+    */
     @Override
     public void actionPerformed(ActionEvent e) {
         frame++;

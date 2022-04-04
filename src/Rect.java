@@ -50,18 +50,30 @@ public class Rect implements Poly{
         return length;
     }
 
+ /**
+    * Implemented for Poly interface, gets Border Colour value
+    * @param a (int) what border colour value is returnerd (0,1,2) -> (R,G,B)
+    * @return border colour value (int) at value speficied 
+    */
     @Override
     public int getBC(int a){
 
         return bColour[a];
     }
 
+ /**
+    * Implemented for Poly interface, returns x value of calss
+    *@return x value of class (int)
+    */
     @Override
     public int getX(){
         
         return x;        
     }
-   
+  /**
+    * Implemented for Poly interface, returns y value of calss
+    *@return y value of class (int)
+    */ 
     @Override
     public int getY(){
 
@@ -138,5 +150,4 @@ public class Rect implements Poly{
         actions.addAction(c, a, x, y);
     
     }
-
 }

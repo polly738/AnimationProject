@@ -110,6 +110,7 @@ public class Action {
   /**
    * Method that an int value(frame) and check if effect occurs on this value
    * and return 
+   * @param a is the number used to check if event occurs on that number
    * @return boolen value, true if effect occurs on the frame, false if not
    */
     public boolean isActionOnFrame(int a){
@@ -124,6 +125,4 @@ public class Action {
             return false;
         }
     }
-    
-
-}
+}//end class

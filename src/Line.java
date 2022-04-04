@@ -17,10 +17,7 @@ public class Line implements Poly{
     private int y2;
     private int frame =0;
     private boolean shown;
-    private int slope;
-
-    private int length;
-
+   
     private ActionHandler actions = new ActionHandler();
     public Line(int xi, int yi,int xi2,int yi2, int bt){
 
@@ -29,12 +26,8 @@ public class Line implements Poly{
         y2 = yi2;
         x2= xi2;
         borderThickness = bt;
-
        
         shown = false;
-
-        length =(int) Math.sqrt(Math.pow(x2-x, 2)+ Math.pow(y2-y, 2));
-
     }
 
     public int getX2(){
@@ -46,43 +39,71 @@ public class Line implements Poly{
         return y2;
     }
 
-
+    /**
+    * Implemented for Poly interface, gets Border Colour value
+    * @param a (int) what border colour value is returnerd (0,1,2) -> (R,G,B)
+    * @return border colour value (int) at value speficied 
+    */
     @Override
     public int getBC(int a){
 
         return -1;
     }
 
+    /**
+    * Implemented for Poly interface, returns x value of class
+    *@return x value of class (int)
+    */
     @Override
     public int getX(){
         
         return x;        
     }
-   
+
+    /**
+    * Implemented for Poly interface, returns y value of class
+    *@return y value of class (int)
+    */
     @Override
     public int getY(){
 
         return y;
     }
-   
+
+   /**
+    * Implemented for Poly interface returns border thickness of class
+    *@return border thickness of class (int)
+    */ 
     @Override
     public int getBorderThickness(){
 
         return borderThickness;
     }
-
+    /**
+    * Implemented for Poly interface return if the poly is suposed to be shown
+    *@return boolean value true if the object is shown false if not
+    */ 
     @Override
     public boolean isShown(){
 
         return shown;
     }
    
+     /**
+    * Implemented for Poly interface, gets Colour value
+    * @param a (int) what colour value is returnerd (0,1,2) -> (R,G,B)
+    * @return colour value (int) at value speficied 
+    */
     @Override
     public int getColour(int a){
 
         return -1;
     }
-   
+  
+  /**
+    * Implemented for Poly interface
+    *Updates the cir on all its attributes if effect is to change them on the frame
+    */  
     @Override
     public void update(){
 
@@ -117,6 +138,11 @@ public class Line implements Poly{
         }    
     }
 
+   /**
+   * Method implement for Poly interface Adds actions to actions (arraylist of actions) for hide/show effect 
+   * @param c (char) type of effect being added
+   * @param a (int) when the effect will be activated
+   */
     @Override
     public void addAction(char c, int a){
 
