@@ -1,11 +1,9 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-public class player {
-
-    //frams: 312 //split here and then use if (array[0] = "frames") frames = array[1]
-    public static void main(String[] args) throws FileNotFoundException{
-        
+public class ShapesBuilder {
+    public Shapes getShapes(String path){
+        Shapes shapes = new Shapes();
         int framecount = 0;
         int fps = 0;
         int elements = 0;
@@ -13,7 +11,7 @@ public class player {
         int lineCount = 1;
         int shape = 0;
         //maybe put Cir here?
-        File file = new File ("animation1.txt"); //file open
+        File file = new File (path); //file open
         Scanner scan = new Scanner(file); //scan file
         while (section==1){ //this loop runs for general settings, 3 settings so 3 times.
             String line = scan.nextLine(); //string line is the first splitLine
@@ -49,14 +47,7 @@ public class player {
         for(int i = 0; i<elements; i++){
             String line = scan.nextLine();
             if(section > 1 && lineCount ==1){
-                if (line.equals("Circle"))
-                shape = 1;
-                else if (line.equals("Rect"))
-                shape = 2;
-                else if (line.equals("Line"))
-                shape = 3;
-                switch(shape){
-                    case 1: //CIRCLE
+                if (line.equals("Circle")){
                     Cir circle = new Cir();
                     int r = 0;
                     int x = 0;
@@ -64,6 +55,13 @@ public class player {
                     int c1 = 0;
                     int c2 = 0;
                     int c3 = 0;
+                    char type;
+                    int start;
+                    int jumpX = 0;
+                    int jumpY = 0;
+                    int CC1 = 0;
+                    int CC2 = 0;
+                    int CC3 = 0;
                     int currentSection = section;
                     while(section == currentSection){
                         String loopLine = scan.nextLine(); //string line is the first splitLine
@@ -95,23 +93,64 @@ public class player {
                         }
                         else
                         System.out.println("no");
-                        //Cir c1 = new Cir(r, x, y,);
                         }
-                        
-                        
+                        if(loopLine.contains("effect")){
+                            String effectLine = scan.nextLine();
+                            if (effectLine.equals("Show")){
+                               type = 's';
+                               String[] splitStart = scan.nextLine().split(" ");
+                               start = splitStart[1];
+                            }
+                            else if (effectLine.equals("Hide")){
+                                type = 'h';
+                                String[] splitStart = scan.nextLine().split(" ");
+                                start = splitStart[1];
+                             }
+                             else if (effectLine.equals("Jump")){
+                                type = 'j';
+                                String[] splitStart = scan.nextLine().split(" ");
+                                start = splitStart[1];
+                                String[] splitX = scan.nextLine().split(" ");
+                                jumpX = splitX[1];
+                                String[] splitY = scan.nextLine().split(" ");
+                                jumpX = splitY[1];
+                             }
+                             else if (effectLine.equals("ChangeColour")){
+                                type = 'c';
+                                String[] splitStart = scan.nextLine().split(" ");
+                                start = splitStart[1];
+                                String[] splitCC1 = scan.nextLine().split(" ");
+                                CC1 = splitCC1[1];
+                                String[] splitCC2 = scan.nextLine().split(" ");
+                                CC2 = splitCC2[1];
+                                String[] splitCC3 = scan.nextLine().split(" ");
+                                CC3 = splitCC3[1];
+                            }
+                            if(type == 's'|| type == 'h'){
+                            circle.addAction(type, start);}
+                            else if (type == 'j')
+                            circle.addAction(type, start, jumpX, jumpY);
+                            else if (type == 'c')
+                            circle.addAction(type, start, CC1, CC2, CC3);
                     }
-                    default:
-                    
-                }
+                
+                        
+                
             }
-            System.out.println(circle.getX());
+            shapes.add(circle);
         }
+                else if (line.equals("Rect")){
+
+                }
+                else if (line.equals("Line")){
+
+                }
+                
+
+
+        return shapes;
+
+       }
     }
 }
-
-        
-        
-        
-    
-
-
+}
