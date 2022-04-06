@@ -60,7 +60,25 @@ public class Cir implements Poly {
 
         return radius;
     }
- 
+    public Cir(int r,int xi, int yi,int c1, int c2, int c3){
+
+
+        radius = r;
+
+        x= xi;
+        y = yi;
+        borderThickness = 0;
+
+        bColour[0] = 0;
+        bColour[1] = 0;
+        bColour[2] = 0;
+        colour[0] = c1;
+        colour[1] = c2;
+        colour[2] = c3;
+
+        shown = false;
+
+    } 
  /**
     * Implemented for Poly interface, gets Border Colour value
     * @param a (int) what border colour value is returnerd (0,1,2) -> (R,G,B)

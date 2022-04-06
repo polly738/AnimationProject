@@ -18,7 +18,7 @@ import java.awt.geom.Line2D;
 
 public class AnCom extends JComponent implements ActionListener{
     private Timer t;
-    private Shapes shapes = new Shapes();
+    private Shapes shapes;
 
     private int frame =0;
 
@@ -29,6 +29,16 @@ public class AnCom extends JComponent implements ActionListener{
         
         super();
         this.setPreferredSize(new Dimension(1000,1000));//sets pixel size 
+        shapes = new Shapes();
+        t = new Timer(100, this);//makes timer for animation loop
+        t.start();
+    }
+
+    public AnCom(Shapes s){
+        super();
+        this.setPreferredSize(new Dimension(1000,1000));//sets pixel size 
+        shapes =s;
+
         t = new Timer(100, this);//makes timer for animation loop
         t.start();
     }
