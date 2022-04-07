@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class ShapesBuilder {
+    //set default values, add get methods for encapsulation
     private int framecount = 60;
     private int fps = 60;
     private int elements = 0;
@@ -31,6 +32,7 @@ public class ShapesBuilder {
         return y;
     }
 
+    //builds a shape from file
     public Shapes getShapes(String path) throws IOException {
         Shapes shapes = new Shapes();
         System.out.println("Test");
