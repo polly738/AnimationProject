@@ -81,13 +81,11 @@ public class ShapesBuilder {
 
                         if (loopLine.contains(":")) {
 
-                            String[] splitLine = loopLine.split(" "); // split "frames: 312" into array with name
-                                                                      // "splitLine": ["frames:", "312"]
+                            String[] splitLine = loopLine.split(" "); // split "frames: 312" into array with name "splitLine": ["frames:", "312"]
 
                             try {
                                 if (splitLine[0].equals("r:"))
                                     circle.setR(Integer.parseInt(splitLine[1]));
-
                                 else if (splitLine[0].equals("x:"))
                                     circle.setX(Integer.parseInt(splitLine[1]));
                                 else if (splitLine[0].equals("y:"))
@@ -98,7 +96,8 @@ public class ShapesBuilder {
                                     circle.setC1(Integer.parseInt(splitLine[1]));
                                     circle.setC2(Integer.parseInt(splitLine[2]));
                                     circle.setC3(Integer.parseInt(splitLine[3]));
-                                } else
+                                } 
+                                else
                                     System.out.println("no");
                             } catch (NumberFormatException e) {
 
