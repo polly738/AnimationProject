@@ -1,5 +1,5 @@
 import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ShapesBuilder {
@@ -31,10 +31,13 @@ public class ShapesBuilder {
         return y;
     }
 
-    public Shapes getShapes(String path) throws FileNotFoundException {
+    public Shapes getShapes(String path) throws IOException {
         Shapes shapes = new Shapes();
+        System.out.println("Test");
         File file = new File(path); // file open
+        System.out.println("test2");
         Scanner scan = new Scanner(file); // scan file
+        
         while (section == 1) { // this loop runs for general settings, 3 settings so 3 times.
             String line = scan.nextLine(); // string line is the first splitLine
 
@@ -160,5 +163,13 @@ public class ShapesBuilder {
         }
         lineCount = 1;
         return shapes;
+    }
+
+    public static void main(String[] args) throws IOException{
+        ShapesBuilder b = new ShapesBuilder();
+
+        Shapes s = b.getShapes("animation1.txt");
+        s.test();
+
     }
 }
